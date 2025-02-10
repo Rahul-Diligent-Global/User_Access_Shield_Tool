@@ -1,0 +1,93 @@
+<mvc:View controllerName="diligent.com.uas.home.controller.Entry"
+		height="100%"
+		xmlns:core="sap.ui.core"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:f="sap.ui.layout.form"
+		xmlns="sap.m"
+		xmlns:uxap="sap.uxap" 
+		xmlns:semantic="sap.m.semantic"
+		displayBlock="true">
+	<SplitContainer
+		id="SplitContDemo"
+		initialDetail="detail"
+		initialMaster="master">
+		<detailPages>
+			<Page
+				id="detail"
+				title="Dashboard"
+				titleAlignment="Center"
+				backgroundDesign= "Transparent"
+				showNavButton="{= !${device>/system/desktop} }"
+				navButtonPress=".onPressDetailBack">
+
+				<uxap:ObjectPageLayout upperCaseAnchorBar="false" showFooter="false">
+
+                 <uxap:sections>
+
+				 <uxap:ObjectPageSection titleUppercase="false" id="Employment" title="Overview">
+				<uxap:subSections>
+				<uxap:ObjectPageSubSection titleUppercase="false">
+
+				<core:Fragment fragmentName="diligent.com.uas.home.view.Tileoverview" type="XML"/>
+
+
+					</uxap:ObjectPageSubSection>
+					</uxap:subSections>
+					</uxap:ObjectPageSection>
+
+
+
+
+
+
+				 <uxap:ObjectPageSection titleUppercase="false" id="table" title="Recent Conflicts">
+				<uxap:subSections>
+				<uxap:ObjectPageSubSection titleUppercase="false">
+
+				<core:Fragment fragmentName="diligent.com.uas.home.view.RecentCfltTable" type="XML"/>
+
+
+					</uxap:ObjectPageSubSection>
+					</uxap:subSections>
+					</uxap:ObjectPageSection>
+
+					</uxap:sections>
+					</uxap:ObjectPageLayout>
+
+
+			</Page>
+			<Page
+				id="SoD"
+				title="SOD"
+				backgroundDesign= "Solid"
+				showNavButton="true"
+				navButtonPress=".onPressDetailBack">
+				
+			</Page>
+			<Page
+				id="Conflicts"
+				title="Conflicts"
+				backgroundDesign= "Solid"
+				showNavButton="true"
+				navButtonPress=".onPressDetailBack">
+				
+			</Page>
+		</detailPages>
+		<masterPages>
+			<Page
+				id="master"
+				title=""
+				backgroundDesign= "List">
+				 <List mode="SingleSelectMaster" id="navList">
+                        <StandardListItem title="Dashboard" icon="sap-icon://home" selected="true" />
+                        <StandardListItem title="SoD Rules" icon="sap-icon://document" />
+                        <StandardListItem title="Conflicts" icon="sap-icon://alert" />
+                        <StandardListItem title="User Access" icon="sap-icon://user-edit" />
+                        <StandardListItem title="Reports" icon="sap-icon://pie-chart" />
+                        <StandardListItem title="All Insights" icon="sap-icon://lightbulb" />
+                        <StandardListItem title="Settings" icon="sap-icon://action-settings" />
+                    </List>
+			</Page>
+		</masterPages>
+	</SplitContainer>
+</mvc:View>
