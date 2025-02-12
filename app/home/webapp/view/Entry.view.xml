@@ -1,93 +1,216 @@
-<mvc:View controllerName="diligent.com.uas.home.controller.Entry"
-		height="100%"
-		xmlns:core="sap.ui.core"
-		xmlns:mvc="sap.ui.core.mvc"
-		xmlns:f="sap.ui.layout.form"
-		xmlns="sap.m"
-		xmlns:uxap="sap.uxap" 
-		xmlns:semantic="sap.m.semantic"
-		displayBlock="true">
-	<SplitContainer
-		id="SplitContDemo"
-		initialDetail="detail"
-		initialMaster="master">
-		<detailPages>
-			<Page
-				id="detail"
-				title="Dashboard"
-				titleAlignment="Center"
-				backgroundDesign= "Transparent"
-				showNavButton="{= !${device>/system/desktop} }"
-				navButtonPress=".onPressDetailBack">
+<mvc:View
+    controllerName="diligent.com.uas.home.controller.Entry"
+    height="100%"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:semantic="sap.m.semantic"
+    xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    displayBlock="true"
+>
+    <SplitContainer
+        id="SplitContDemo"
+        initialDetail="detail"
+        initialMaster="master"
+    >
+        <detailPages>
+            <Page
+                id="detail"
+                title="Dashboard"
+                titleAlignment="Center"
+                backgroundDesign="Transparent"
+                showNavButton="{= !${device>/system/desktop} }"
+                navButtonPress=".onPressDetailBack"
+            >
+                <uxap:ObjectPageLayout
+                    upperCaseAnchorBar="false"
+                    showFooter="false"
+                >
+                    <uxap:sections>
+                        <uxap:ObjectPageSection
+                            titleUppercase="false"
+                            id="Employment"
+                            title="Overview"
+                        >
+                            <uxap:subSections>
+                                <uxap:ObjectPageSubSection
+                                    titleUppercase="false"
+                                >
+                                    <core:Fragment
+                                        fragmentName="diligent.com.uas.home.view.Tileoverview"
+                                        type="XML"
+                                    />
+                                </uxap:ObjectPageSubSection>
+                            </uxap:subSections>
+                        </uxap:ObjectPageSection>
 
-				<uxap:ObjectPageLayout upperCaseAnchorBar="false" showFooter="false">
-
-                 <uxap:sections>
-
-				 <uxap:ObjectPageSection titleUppercase="false" id="Employment" title="Overview">
-				<uxap:subSections>
-				<uxap:ObjectPageSubSection titleUppercase="false">
-
-				<core:Fragment fragmentName="diligent.com.uas.home.view.Tileoverview" type="XML"/>
-
-
-					</uxap:ObjectPageSubSection>
-					</uxap:subSections>
-					</uxap:ObjectPageSection>
-
-
-
-
-
-
-				 <uxap:ObjectPageSection titleUppercase="false" id="table" title="Recent Conflicts">
-				<uxap:subSections>
-				<uxap:ObjectPageSubSection titleUppercase="false">
-
-				<core:Fragment fragmentName="diligent.com.uas.home.view.RecentCfltTable" type="XML"/>
-
-
-					</uxap:ObjectPageSubSection>
-					</uxap:subSections>
-					</uxap:ObjectPageSection>
-
-					</uxap:sections>
-					</uxap:ObjectPageLayout>
-
-
-			</Page>
-			<Page
-				id="SoD"
-				title="SOD"
-				backgroundDesign= "Solid"
-				showNavButton="true"
-				navButtonPress=".onPressDetailBack">
-				
-			</Page>
-			<Page
-				id="Conflicts"
-				title="Conflicts"
-				backgroundDesign= "Solid"
-				showNavButton="true"
-				navButtonPress=".onPressDetailBack">
-				
-			</Page>
-		</detailPages>
-		<masterPages>
-			<Page
-				id="master"
-				title=""
-				backgroundDesign= "List">
-				 <List mode="SingleSelectMaster" id="navList">
-                        <StandardListItem title="Dashboard" icon="sap-icon://home" selected="true" />
-                        <StandardListItem title="SoD Rules" icon="sap-icon://document" />
-                        <StandardListItem title="Conflicts" icon="sap-icon://alert" />
-                        <StandardListItem title="User Access" icon="sap-icon://user-edit" />
-                        <StandardListItem title="Reports" icon="sap-icon://pie-chart" />
-                        <StandardListItem title="All Insights" icon="sap-icon://lightbulb" />
-                        <StandardListItem title="Settings" icon="sap-icon://action-settings" />
-                    </List>
-			</Page>
-		</masterPages>
-	</SplitContainer>
+                        <uxap:ObjectPageSection
+                            titleUppercase="false"
+                            id="table"
+                            title="Recent Conflicts"
+                        >
+                            <uxap:subSections>
+                                <uxap:ObjectPageSubSection
+                                    titleUppercase="false"
+                                >
+                                    <core:Fragment
+                                        fragmentName="diligent.com.uas.home.view.RecentCfltTable"
+                                        type="XML"
+                                    />
+                                </uxap:ObjectPageSubSection>
+                            </uxap:subSections>
+                        </uxap:ObjectPageSection>
+                    </uxap:sections>
+                </uxap:ObjectPageLayout>
+            </Page>
+            <Page
+                id="SoD"
+                title="SOD"
+                titleAlignment="Center"
+                backgroundDesign="Solid"
+                showNavButton="false"
+                navButtonPress=".onPressDetailBack"
+            >
+                <uxap:ObjectPageLayout
+                    upperCaseAnchorBar="false"
+                    showFooter="false"
+                >
+                    <uxap:sections>
+                        <uxap:ObjectPageSection
+                            titleUppercase="false"
+                            id="SOD_C"
+                            title="Rule Header"
+                        >
+                            <uxap:subSections>
+                                <uxap:ObjectPageSubSection
+                                    titleUppercase="false"
+                                >
+                                    <core:Fragment
+                                        fragmentName="diligent.com.uas.home.view.Sodrule_Create"
+                                        type="XML"
+                                    />
+                                </uxap:ObjectPageSubSection>
+                            </uxap:subSections>
+                        </uxap:ObjectPageSection>
+                        <uxap:ObjectPageSection
+                            titleUppercase="false"
+                            id="SOD_I"
+                            title="Rule Item"
+                        >
+                            <uxap:subSections>
+                                <uxap:ObjectPageSubSection
+                                    titleUppercase="false"
+                                >
+                                    <core:Fragment
+                                        fragmentName="diligent.com.uas.home.view.Sodrule_Create_I"
+                                        type="XML"
+                                    />
+                                </uxap:ObjectPageSubSection>
+                            </uxap:subSections>
+                        </uxap:ObjectPageSection>
+                    </uxap:sections>
+                    <uxap:footer>
+                        <OverflowToolbar>
+                            <!--  First button on the left  -->
+                            <!--  Spacer to push the next buttons to the right  -->
+                            <Button
+                                id="errorMessage"
+                                icon="sap-icon://error"
+                                type="Negative"
+                                press="onMessagePopoverPress"
+                                visible="{= ${messageModel>/messages}.length > 0 }"
+                            />
+                            <ToolbarSpacer />
+                            <!--  Buttons on the right  -->
+                            <Button
+                                text="{i18n>master_save}"
+                                press="etenderMasterSave"
+                                enabled="{parts: [{path: 'inputEnableModel>/isInputEnabled'},{path: 'inputEnableModel>/vettedbyisEnable'}],formatter: '.formatter.vettedbyEnbaleSave' }"
+                            />
+                            <!-- <Button text="{i18n>submit}" press="onSubmitCegMaster" enabled="{parts: [{path: 'inputEnableModel>/isInputEnabled'},{path: 'inputEnableModel>/vettedbyisEnable'}],formatter: '.formatter.vettedbyEnbaleSave' }"/> -->
+                            <!--  <m:Button text="Test Data" press="testData" enabled="{inputEnableModel>/isInputEnabled}" />  -->
+                        </OverflowToolbar>
+                    </uxap:footer>
+                </uxap:ObjectPageLayout>
+                <MessagePopover
+                    id="messagePopover"
+                    activeTitlePress="messageNav"
+                    items="{ path: 'messageModel>/messages', templateShareable: false }"
+                >
+                    <MessageItem
+                        type="{messageModel>type}"
+                        activeTitle="true"
+                        title="{messageModel>message}"
+                        description="{messageModel>description}"
+                    />
+                </MessagePopover>
+            </Page>
+            <Page
+                id="Conflicts"
+                title="Conflicts"
+                titleAlignment="Center"
+                backgroundDesign="Solid"
+                showNavButton="false"
+                navButtonPress=".onPressDetailBack"
+            />
+        </detailPages>
+        <masterPages>
+            <Page
+                id="master"
+                title=""
+                backgroundDesign="List"
+            >
+                <List
+                    mode="SingleSelectMaster"
+                    id="navList"
+                    itemPress=".onListItemPress"
+                >
+                    <StandardListItem
+                        title="Dashboard"
+                        icon="sap-icon://home"
+                        selected="true"
+                        custom:to="detail"
+                    />
+                    <StandardListItem
+                        title="SoD Rules"
+                        icon="sap-icon://document"
+                        type="Active"
+                        custom:to="SoD"
+                    />
+                    <StandardListItem
+                        title="Conflicts"
+                        icon="sap-icon://alert"
+                        type="Active"
+                        custom:to="Conflicts"
+                    />
+                    <StandardListItem
+                        title="User Access"
+                        icon="sap-icon://user-edit"
+                        type="Active"
+                        custom:to="detail"
+                    />
+                    <StandardListItem
+                        title="Reports"
+                        icon="sap-icon://pie-chart"
+                        type="Active"
+                        custom:to="detail"
+                    />
+                    <StandardListItem
+                        title="All Insights"
+                        icon="sap-icon://lightbulb"
+                        type="Active"
+                        custom:to="detail"
+                    />
+                    <StandardListItem
+                        title="Settings"
+                        icon="sap-icon://action-settings"
+                        type="Active"
+                        custom:to="detail"
+                    />
+                </List>
+            </Page>
+        </masterPages>
+    </SplitContainer>
 </mvc:View>

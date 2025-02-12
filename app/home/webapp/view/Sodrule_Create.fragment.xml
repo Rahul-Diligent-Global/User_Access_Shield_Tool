@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:m="sap.m" xmlns:layout="sap.ui.layout" xmlns:uxap="sap.uxap" xmlns:upload="sap.m.upload">
+<f:SimpleForm editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+<f:content>
+
+<m:Label text="{i18n>SoD_ID}"/>
+<m:Input value="{SoDHeaderModel>/SoD_ID}" tooltip="{SoDHeaderModel>/SoD_ID}" id="SoD_ID" enabled="{inputEnableModel>/isInputEnabled}"/>
+
+
+<m:Label text="{i18n>SoD_Name}"/>
+<m:Input value="{SoDHeaderModel>/SoD_Name}" tooltip="{SoDHeaderModel>/SoD_Name}" id="SoD_Name" enabled="{inputEnableModel>/isInputEnabled}"/>
+
+<m:Label text="{i18n>SoD_Desc}"/>
+<m:Input value="{SoDHeaderModel>/SoD_Desc}" tooltip="{SoDHeaderModel>/SoD_Desc}" id="SoD_Desc" enabled="{inputEnableModel>/isInputEnabled}"/>
+
+<m:Label text="{i18n>SoD_Vf}"/>
+<m:DatePicker value="{SoDHeaderModel>/SoD_Vf}" id="SoD_Vf" enabled="{inputEnableModel>/isInputEnabled}"/>
+
+<m:Label text="{i18n>SoD_Vt}"/>
+<m:DatePicker value="{SoDHeaderModel>/SoD_Vt}" tooltip="{SoDHeaderModel>/SoD_Vt}" id="SoD_Vt" enabled="{inputEnableModel>/isInputEnabled}"/>
+
+
+</f:content>
+</f:SimpleForm>
+</core:FragmentDefinition>

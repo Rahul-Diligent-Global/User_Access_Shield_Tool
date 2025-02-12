@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:uxap="sap.uxap" xmlns:upload="sap.m.upload">
+<HBox>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Active Conflicts" subheader="" press="press">
+						<TileContent unit="+3" footer="Since Yesterday">
+							<NumericContent scale="" value="28" valueColor="Error" indicator="None" withMargin="false" />
+						</TileContent>
+					</GenericTile>
+
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Active Rules" subheader="" press="press">
+						<TileContent unit="" footer="Updated 2hr ago">
+						<NumericContent scale="" value="156" valueColor="Good" indicator="None" withMargin="false" />
+						</TileContent>
+					</GenericTile>
+
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="System Connected" subheader="" press="press">
+						<TileContent unit="" footer="All System Operational">
+						<NumericContent scale="" value="2" valueColor="Good" indicator="None" withMargin="false" />
+						</TileContent>
+					</GenericTile>
+</HBox>
+</core:FragmentDefinition>
